@@ -25,9 +25,9 @@ def send_text(message):
         pric = pric[:-4]
         pric.reverse()
         pric = ' '.join(pric)
-        plt.savefig('/trading/foo1.png')
-        bot.send_photo(message.chat.id, open('/trading/foo1.png', 'rb'))
-        os.remove("/trading/foo1.png")
+        plt.savefig('foo1.png')
+        bot.send_photo(message.chat.id, open('foo1.png', 'rb'))
+        os.remove("foo1.png")
         bot.send_message(message.chat.id, pric)
     except:
         bot.send_message(message.chat.id, "Ваш токен неправильный")
