@@ -11,7 +11,7 @@ bot = telebot.TeleBot(config.token)
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
-    bot.send_message(message.chat.id, 'Напиши токен компании')
+    bot.send_message(message.chat.id, 'Напишите тикер компании')
 
 @bot.message_handler(content_types=["text"])
 def send_text(message):
@@ -30,6 +30,6 @@ def send_text(message):
         os.remove("foo1.png")
         bot.send_message(message.chat.id, pric)
     except:
-        bot.send_message(message.chat.id, "Ваш токен неправильный")
+        bot.send_message(message.chat.id, "Ваш тикер неправильный")
 
 bot.polling(none_stop=True, interval=0)
